@@ -1,9 +1,6 @@
 let s:save_cpo = &cpo
 set cpo&vim
 
-" vim的resize命令移动的是当前窗口的右侧和底部的边框，如果右侧和底部有窗口的话
-" 上下只有一个窗口的时候也是移动的低侧，水平没有影响
-
 " 步长
 let s:resize_window_step = get(g:, 'resize_window_step', 1)
 
