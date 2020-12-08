@@ -1,9 +1,6 @@
 let s:save_cpo = &cpo
 set cpo&vim
 
-echom "hello"
-
-
 if exists('g:loaded_resize_window')
   finish
 endif
