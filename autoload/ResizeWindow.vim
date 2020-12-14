@@ -21,7 +21,6 @@ function! ResizeWindow#up() abort
     elseif s:has_win('j') && !s:has_win('k')
         " 顶部
         exec 'resize -' . s:resize_window_step
-        return
     elseif s:has_win('k') && !s:has_win('j')
         " 底部
         exec 'resize +' . s:resize_window_step
@@ -38,13 +37,11 @@ function! ResizeWindow#down() abort
     elseif s:has_win('j') && !s:has_win('k')
         " 顶部
         exec 'resize +' . s:resize_window_step
-        return
     elseif s:has_win('k') && !s:has_win('j')
         " 底部
         exec winnr('k') . 'resize +' . s:resize_window_step
     elseif s:has_win('k') && s:has_win('j')
         " 中间
-        " exec 'resize +' . s:resize_window_step
         exec winnr('k') . 'resize +' .s:resize_window_step
     endif
 endfunction
@@ -60,10 +57,8 @@ function! ResizeWindow#left() abort
     elseif s:has_win('l') && !s:has_win('h')
         " 最左侧
         exec 'vertical resize -' . s:resize_window_step
-        return
     elseif s:has_win('h') && s:has_win('l')
         " 中间
-        " exec 'vertical ' . winnr('h') . 'resize -' . s:resize_window_step
         exec 'vertical resize -' . s:resize_window_step
     endif
 endfunction
@@ -76,7 +71,6 @@ function! ResizeWindow#right() abort
     elseif s:has_win('h') && !s:has_win('l')
         " 最右侧
         exec 'vertical resize -' . s:resize_window_step
-        return
     elseif s:has_win('l') && !s:has_win('h')
         " 最左侧
         exec 'vertical resize +' . s:resize_window_step
